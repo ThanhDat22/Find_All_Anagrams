@@ -22,6 +22,11 @@ void print_vector(const vector<int>& vec) {
     cout << "]" << endl << endl;;
 }
 
+/** Finds all anagrams of a given string in another string using a brute force approach.
+    @param s: The string to search for anagrams in.
+    @param p: The string to find anagrams of.
+    @return: A vector containing the starting indices of all anagrams of p in s.
+ */
 vector<int> find_anagrams_brute_force(const string& s, const string& p) {
     vector<int> result;
     size_t s_length = s.size();
@@ -52,7 +57,11 @@ vector<int> find_anagrams_brute_force(const string& s, const string& p) {
 } // Time Complexity: O(n * m log m), where n is the length of s and m is the length of p.
   // Space Complexity: O(m) for storing the sorted version of p and the substring.
 
-
+/** Creates a feature vector for a given string.
+    @param str: The string to create a feature vector for.
+    @param length: The length of the string to consider.
+    @return: A vector representing the count of each character in the string.
+ */
 vector<int> create_feature_vector(const string& str, size_t length) {
     vector<int> feature_vector(26, 0); // Initialize a vector inluding 26 zeros for each letter.
     for (size_t i = 0; i < length; ++i) {
@@ -61,6 +70,11 @@ vector<int> create_feature_vector(const string& str, size_t length) {
     return feature_vector;
 } // Time Complexity: O(n), Space Complexity: O(1).
 
+/** Finds all anagrams of a given string in another string using the sliding window technique.
+    @param s: The string to search for anagrams in.
+    @param p: The string to find anagrams of.
+    @return: A vector containing the starting indices of all anagrams of p in s.
+ */
 vector<int> find_anagrams_sliding_window(const string& s, const string& p) {
     vector<int> result;
     size_t s_length = s.size();
